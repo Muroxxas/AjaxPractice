@@ -6,7 +6,31 @@
 
 <h2>Employee</h2>
 
-<div>
-  @Html.DisplayFor(X => X.Name)
+<table style="border:1px solid black; background-color:Silver">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+    </tr>
 
-</div>
+    @foreach (AjaxPractice.Models.EmpModel item in ViewBag.Employees)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+        </tr>
+    }
+</table>
